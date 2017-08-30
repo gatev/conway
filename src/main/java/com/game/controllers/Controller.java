@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 @RestController
-public class InitController {
+public class Controller {
 
     @Autowired
     GameManagerService gameManager;
