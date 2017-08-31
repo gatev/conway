@@ -3,13 +3,13 @@ package com.game.services;
 import com.game.model.CellCoordinates;
 import com.game.model.InitialConfig;
 import com.game.model.Universe;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 @Service
 public interface GameManagerService {
-    void initGame(InitialConfig initialConfig);
-    void startMutations (int numberOfGenerations, Universe universe);
-    List<CellCoordinates> getLiveCells();
+	List<CellCoordinates> playGame(InitialConfig initialConfig);
+	List<CellCoordinates> startMutations (int numberOfGenerations, Universe universe);
 }

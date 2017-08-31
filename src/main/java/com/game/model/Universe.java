@@ -60,7 +60,7 @@ public class Universe {
                 result++;
             }
         }
-        //self
+
         if (y != getGrid().length - 1) {
             if (isAlive(x, y + 1)) {
                 result++;
