@@ -11,7 +11,7 @@ public class GameManagerServiceImpl implements GameManagerService {
     public void initGame(InitialConfig initialConfig) {
         final Universe universe = new Universe(initialConfig.getHorizontalSize(), initialConfig.getVerticalSize());
         initialConfig.getListAliveCells().forEach((aliveCellCoordinate) ->
-                universe.getGrid()[aliveCellCoordinate.getX()][aliveCellCoordinate.getY()] = Cell.A
+                universe.getGrid()[aliveCellCoordinate.getX()][aliveCellCoordinate.getY()] = new Cell(CellState.A)
         );
 
         for (int i = 0; i < universe.getHorizontalSize(); i++) {
@@ -30,11 +30,12 @@ public class GameManagerServiceImpl implements GameManagerService {
         List<CellCoordinates> cellsToChangeState = new ArrayList<>();
 
         Cell[][] grid = universe.getGrid();
+
         for (int k = 0; k < numberOfGenerations; k++) {
             cellsToChangeState.clear();
             for (int i = 0; i < grid.length; i++) {
                 for (int j = 0; j < grid[i].length; j++) {
-                    int aliveNeighbours = GameRules.getAliveNeighbours(i, j, universe);
+                    int aliveNeighbours = universe.getAliveNeighbours(i, j, grid);
                     boolean isChangingPossible = GameRules.shouldChangeState(grid[i][j], aliveNeighbours);
                     if (isChangingPossible) {
                         cellsToChangeState.add(new CellCoordinates(i, j));
@@ -43,11 +44,11 @@ public class GameManagerServiceImpl implements GameManagerService {
                 }
             }
 
-            GameRules.changeState(cellsToChangeState, universe);
+            universe.changeState(cellsToChangeState, grid);
             System.out.println();
-            for (int i = 0; i < universe.getHorizontalSize(); i++) {
-                for (int j = 0; j < universe.getVerticalSize(); j++) {
-                    System.out.print(universe.getGrid()[i][j] + " ");
+            for (int i = 0; i < grid.length; i++) {
+                for (int j = 0; j < grid.length; j++) {
+                    System.out.print(grid[i][j] + " ");
                 }
                 System.out.println();
             }

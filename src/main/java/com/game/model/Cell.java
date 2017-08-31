@@ -1,20 +1,23 @@
 package com.game.model;
 
-public enum Cell {
-    A(State.A), D(State.D);
+public class Cell {
 
-    Cell(State state) {
+    private CellState state;
+
+    public Cell(CellState state) {
         this.state = state;
     }
 
-    private State state;
-
-    public State getState() {
+    public CellState getState() {
         return state;
     }
 
-    public enum State {
-        A, D
+    public void setState(CellState state) {
+        this.state = state;
     }
 
+    @Override
+    public String toString() {
+        return getState().toString();
+    }
 }

@@ -1,5 +1,6 @@
 package com.game.services;
 
+import com.game.model.Cell;
 import com.game.model.InitialConfig;
 import com.game.model.Universe;
 import org.springframework.stereotype.Service;
