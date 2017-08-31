@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GameManagerServiceImpl implements GameManagerService {
+
+    private List<CellCoordinates> liveCells = new ArrayList<>();
+
     @Override
     public void initGame(InitialConfig initialConfig) {
         final Universe universe = new Universe(initialConfig.getHorizontalSize(), initialConfig.getVerticalSize());
@@ -23,6 +26,7 @@ public class GameManagerServiceImpl implements GameManagerService {
 
 
         startMutations(initialConfig.getNumberOfGenerations(), universe);
+
     }
 
     @Override
@@ -35,7 +39,7 @@ public class GameManagerServiceImpl implements GameManagerService {
             cellsToChangeState.clear();
             for (int i = 0; i < grid.length; i++) {
                 for (int j = 0; j < grid[i].length; j++) {
-                    int aliveNeighbours = universe.getAliveNeighbours(i, j, grid);
+                    int aliveNeighbours = universe.getAliveNeighbours(i, j);
                     boolean isChangingPossible = GameRules.shouldChangeState(grid[i][j], aliveNeighbours);
                     if (isChangingPossible) {
                         cellsToChangeState.add(new CellCoordinates(i, j));
@@ -44,14 +48,27 @@ public class GameManagerServiceImpl implements GameManagerService {
                 }
             }
 
-            universe.changeState(cellsToChangeState, grid);
+            universe.changeState(cellsToChangeState);
             System.out.println();
-            for (int i = 0; i < grid.length; i++) {
-                for (int j = 0; j < grid.length; j++) {
-                    System.out.print(grid[i][j] + " ");
-                }
-                System.out.println();
-            }
+
         }
+
+
+        System.out.println("++++++++++++++++++++++++++++++++++");
+
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid.length; j++) {
+                if (grid[i][j].getState().equals(CellState.A)) {
+                    liveCells.add(new CellCoordinates(i,j));
+                }
+                System.out.print(grid[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    @Override
+    public List<CellCoordinates> getLiveCells() {
+        return this.liveCells;
     }
 }

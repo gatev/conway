@@ -36,51 +36,51 @@ public class Universe {
         return verticalSize;
     }
 
-    public int getAliveNeighbours(int x, int y, Cell[][] grid) {
+    public int getAliveNeighbours(int x, int y) {
         int result = 0;
         if (x != 0 && y != 0) {
-            if (isAlive(x - 1, y - 1, grid)) {
+            if (isAlive(x - 1, y - 1)) {
                 result++;
             }
         }
 
         if (x != 0) {
-            if (isAlive(x - 1, y, grid)) {
+            if (isAlive(x - 1, y)) {
                 result++;
             }
         }
 
-        if (x != 0 && y != grid.length - 1) {
-            if (isAlive(x- 1, y + 1, grid)) {
+        if (x != 0 && y != getGrid().length - 1) {
+            if (isAlive(x- 1, y + 1)) {
                 result++;
             }
         }
         if (y != 0) {
-            if (isAlive(x, y - 1, grid)) {
+            if (isAlive(x, y - 1)) {
                 result++;
             }
         }
         //self
-        if (y != grid.length - 1) {
-            if (isAlive(x, y + 1, grid)) {
+        if (y != getGrid().length - 1) {
+            if (isAlive(x, y + 1)) {
                 result++;
             }
         }
 
-        if (x != grid.length - 1 && y != 0) {
-            if (isAlive(x + 1, y - 1, grid)) {
+        if (x != getGrid().length - 1 && y != 0) {
+            if (isAlive(x + 1, y - 1)) {
                 result++;
             }
         }
 
-        if (x != grid.length - 1) {
-            if (isAlive(x + 1, y, grid)) {
+        if (x != getGrid().length - 1) {
+            if (isAlive(x + 1, y)) {
                 result++;
             }
         }
 
-        if (x != grid.length - 1 && y != grid.length - 1) {
-            if (isAlive(x + 1, y + 1, grid)) {
+        if (x != getGrid().length - 1 && y != getGrid().length - 1) {
+            if (isAlive(x + 1, y + 1)) {
                 result++;
             }
         }
@@ -88,19 +88,19 @@ public class Universe {
         return result;
     }
 
-    public static boolean isAlive(int row, int col, Cell[][] grid) {
-        return grid[row][col].getState().equals(CellState.A);
+    public boolean isAlive(int row, int col) {
+        return getGrid()[row][col].getState().equals(CellState.A);
     }
 
-    public void changeState(List<CellCoordinates> cellList, Cell[][] grid) {
+    public void changeState(List<CellCoordinates> cellList) {
         cellList.forEach(cell -> {
-            Cell currentCell = grid[cell.getX()][cell.getY()];
+            Cell currentCell = getGrid()[cell.getX()][cell.getY()];
             if (currentCell.getState().equals(CellState.A)) {
                 currentCell.setState(CellState.D);
-                grid[cell.getX()][cell.getY()] = currentCell;
+                getGrid()[cell.getX()][cell.getY()] = currentCell;
             } else {
                 currentCell.setState(CellState.A);
-                grid[cell.getX()][cell.getY()] = currentCell;
+                getGrid()[cell.getX()][cell.getY()] = currentCell;
             }
         });
     }

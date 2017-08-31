@@ -20,17 +20,17 @@ public class Controller {
     GameManagerService gameManager;
 
     @PostMapping(path = "/init")
-    public ResponseEntity<Map<String, String>> init(@RequestBody @Valid InitialConfig initialConfig, BindingResult bindingResult) {
+    public ResponseEntity<?> init(@RequestBody @Valid InitialConfig initialConfig, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             Map<String, String > errors = new TreeMap<>();
             bindingResult.getFieldErrors().stream().forEach(error -> {
                 errors.put(error.getField(), error.getDefaultMessage());
             });
-            return new ResponseEntity<>(errors, HttpStatus.CONFLICT);
+            return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
         }
 
         gameManager.initGame(initialConfig);
 
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(gameManager.getLiveCells(), HttpStatus.OK);
     }
 }

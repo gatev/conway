@@ -29,11 +29,11 @@ public class TestUniverse {
 
 		Universe universe = new Universe(cells);
 
-		assertEquals(2, universe.getAliveNeighbours(0, 0, cells));
-		assertEquals(3, universe.getAliveNeighbours(0, 1, cells));
-		assertEquals(2, universe.getAliveNeighbours(0, 2, cells));
-		assertEquals(1, universe.getAliveNeighbours(1, 0, cells));
-		assertEquals(2, universe.getAliveNeighbours(1, 1, cells));
+		assertEquals(2, universe.getAliveNeighbours(0, 0));
+		assertEquals(3, universe.getAliveNeighbours(0, 1));
+		assertEquals(2, universe.getAliveNeighbours(0, 2));
+		assertEquals(1, universe.getAliveNeighbours(1, 0));
+		assertEquals(2, universe.getAliveNeighbours(1, 1));
 	}
 
 	@Test
@@ -41,16 +41,16 @@ public class TestUniverse {
 		Universe universe = new Universe(cells);
 		List<CellCoordinates> listToChangeState = new ArrayList<>();
 
-		assertEquals(true, universe.isAlive(1,0, cells));
-		assertEquals(true, universe.isAlive(1,2, cells));
+		assertEquals(true, universe.isAlive(1,0));
+		assertEquals(true, universe.isAlive(1,2));
 
 		listToChangeState.add(new CellCoordinates(1, 0));
 		listToChangeState.add(new CellCoordinates(1, 2));
 
-		universe.changeState(listToChangeState, cells);
+		universe.changeState(listToChangeState);
 
-		assertEquals(false, universe.isAlive(1,0, cells));
-		assertEquals(false, universe.isAlive(1,2, cells));
+		assertEquals(false, universe.isAlive(1,0));
+		assertEquals(false, universe.isAlive(1,2));
 	}
 
 	@Test
@@ -58,32 +58,32 @@ public class TestUniverse {
 		Universe universe = new Universe(cells);
 		List<CellCoordinates> listToChangeState = new ArrayList<>();
 
-		assertEquals(false, universe.isAlive(0,1, cells));
-		assertEquals(false, universe.isAlive(2,1, cells));
+		assertEquals(false, universe.isAlive(0,1));
+		assertEquals(false, universe.isAlive(2,1));
 
 		listToChangeState.add(new CellCoordinates(0, 1));
 		listToChangeState.add(new CellCoordinates(2, 1));
 
-		universe.changeState(listToChangeState, cells);
+		universe.changeState(listToChangeState);
 
-		assertEquals(true, universe.isAlive(0,1, cells));
-		assertEquals(true, universe.isAlive(2,1, cells));
+		assertEquals(true, universe.isAlive(0,1));
+		assertEquals(true, universe.isAlive(2,1));
 	}
 
-//	@Test
-//	public void testUniverseStayTheSame() {
-//		Cell[][] cells = { { new Cell(CellState.D), new Cell(CellState.D), new Cell(CellState.D) },
-//				{ new Cell(CellState.A), new Cell(CellState.A), new Cell(CellState.D) },
-//				{ new Cell(CellState.A), new Cell(CellState.D), new Cell(CellState.D) } };
-//
-//		Universe universe = new Universe(cells);
-//
-//		List<CellCoordinates> listToChangeState = new ArrayList<>();
-//
-//		universe.changeState(listToChangeState, cells);
-//
-//		assertEquals(cells, universe.getGrid());
-//	}
+	@Test
+	public void testUniverseStayTheSame() {
+		Cell[][] cells = { { new Cell(CellState.D), new Cell(CellState.D), new Cell(CellState.D) },
+				{ new Cell(CellState.A), new Cell(CellState.A), new Cell(CellState.D) },
+				{ new Cell(CellState.A), new Cell(CellState.D), new Cell(CellState.D) } };
+
+		Universe universe = new Universe(cells);
+
+		List<CellCoordinates> listToChangeState = new ArrayList<>();
+
+		universe.changeState(listToChangeState);
+
+		assertEquals(cells, universe.getGrid());
+	}
 
 
 }
