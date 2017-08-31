@@ -20,6 +20,7 @@ import java.util.List;
 @SpringBootTest
 @AutoConfigureMockMvc
 public class TestUniverse {
+
 	Cell[][] cells = { { new Cell(CellState.D), new Cell(CellState.D), new Cell(CellState.D) },
 			{ new Cell(CellState.A), new Cell(CellState.A), new Cell(CellState.A) },
 			{ new Cell(CellState.D), new Cell(CellState.D), new Cell(CellState.D) } };

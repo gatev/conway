@@ -27,21 +27,35 @@ public class GameManagerServiceImpl implements GameManagerService {
 
         for (int k = 0; k < numberOfGenerations; k++) {
             cellsToChangeState.clear();
-            for (int i = 0; i < grid.length; i++) {
-                for (int j = 0; j < grid[i].length; j++) {
-                    int aliveNeighbours = universe.getAliveNeighbours(i, j);
-                    boolean isChangingPossible = GameRules.shouldChangeState(grid[i][j], aliveNeighbours);
-                    if (isChangingPossible) {
-                        cellsToChangeState.add(new CellCoordinates(i, j));
-
-                    }
-                }
-            }
+            cellsToChangeState = iterateGrid(cellsToChangeState, universe);
 
             universe.changeState(cellsToChangeState);
         }
 
+        liveCells = getTheLastAliveCells(grid);
 
+        return liveCells;
+    }
+
+    @Override
+    public List<CellCoordinates> iterateGrid(List<CellCoordinates> cellsToChangeState, Universe universe) {
+        Cell[][] grid = universe.getGrid();
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                int aliveNeighbours = universe.getAliveNeighbours(i, j);
+                boolean isChangingPossible = GameRules.shouldChangeState(grid[i][j], aliveNeighbours);
+                if (isChangingPossible) {
+                    cellsToChangeState.add(new CellCoordinates(i, j));
+                }
+            }
+        }
+
+        return cellsToChangeState;
+    }
+
+    @Override
+    public List<CellCoordinates> getTheLastAliveCells (Cell[][] grid) {
+        List<CellCoordinates> liveCells = new ArrayList<>();
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid.length; j++) {
                 if (grid[i][j].getState().equals(CellState.A)) {

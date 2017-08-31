@@ -20,6 +20,13 @@ public class InitialConfig {
     @NotNull
     List<CellCoordinates> listAliveCells;
 
+    public InitialConfig(int verticalSize, int horizontalSize, int numberOfGenerations, List<CellCoordinates> listAliveCells) {
+        this.verticalSize = verticalSize;
+        this.horizontalSize = horizontalSize;
+        this.numberOfGenerations = numberOfGenerations;
+        this.listAliveCells = listAliveCells;
+    }
+
     public int getVerticalSize() {
         return verticalSize;
     }
