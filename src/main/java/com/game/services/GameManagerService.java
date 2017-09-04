@@ -13,6 +13,6 @@ import org.springframework.stereotype.Service;
 public interface GameManagerService {
 	List<CellCoordinates> playGame(InitialConfig initialConfig);
 	List<CellCoordinates> startMutations (int numberOfGenerations, Universe universe);
-	List<CellCoordinates> iterateGrid(List<CellCoordinates> cellsToChangeState, Universe universe);
-	List<CellCoordinates> getTheLastAliveCells (Cell[][] grid);
+//	List<CellCoordinates> iterateGrid(List<CellCoordinates> cellsToChangeState, Universe universe);
+//	List<CellCoordinates> getTheLastAliveCells (Cell[][] grid);
 }

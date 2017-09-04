@@ -37,8 +37,7 @@ public class GameManagerServiceImpl implements GameManagerService {
         return liveCells;
     }
 
-    @Override
-    public List<CellCoordinates> iterateGrid(List<CellCoordinates> cellsToChangeState, Universe universe) {
+    private List<CellCoordinates> iterateGrid(List<CellCoordinates> cellsToChangeState, Universe universe) {
         Cell[][] grid = universe.getGrid();
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[i].length; j++) {
@@ -53,8 +52,7 @@ public class GameManagerServiceImpl implements GameManagerService {
         return cellsToChangeState;
     }
 
-    @Override
-    public List<CellCoordinates> getTheLastAliveCells (Cell[][] grid) {
+    private List<CellCoordinates> getTheLastAliveCells (Cell[][] grid) {
         List<CellCoordinates> liveCells = new ArrayList<>();
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid.length; j++) {
