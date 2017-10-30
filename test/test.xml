@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<artifact rotate="no">
+   <worksheet>
+      <sheetName>r121</sheetName>
+      <header>
+         <p wrap="no" font-size="12" align="left">СПРАВКА ЗА БАНКОВИ СМЕТКИ НА ФИЗИЧЕСКО ИЛИ ЮРИДИЧЕСКО ЛИЦЕ</p>
+      </header>
+      <p />
+      <table width="60%">
+         <thead />
+         <tbody>
+            <tr>
+               <td width="40%" wrap="no" align="left" font-size="8" bold="yes">ПЕРИОД НА СПРАВКАТА</td>
+               <td width="30%" wrap="no" align="left" font-size="8">31.10.2016 г. - 30.10.2017 г.</td>
+            </tr>
+         </tbody>
+      </table>
+      <p />
+      <table width="60%">
+         <thead />
+         <tbody>
+            <tr>
+               <td wrap="no" align="left" font-size="8" bold="yes">ДАННИ ЗА ЛИЦЕТО</td>
+            </tr>
+            <tr>
+               <td wrap="yes" align="left" font-size="7">
+                  <p font-size="8">ДЪРЖАВА, ИЗДАЛА ИДЕНТИФИКАТОР: BULGARIA;</p>
+                  <p font-size="8">ИДЕНТИФИКАТОР: ЕГН 8602156792;</p>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <p />
+      <p font-size="7" bold="yes">БАНКОВИ СМЕТКИ</p>
+      <p />
+      <table width="100%">
+         <thead>
+            <tr header="yes">
+               <td font-size="7" bold="yes" align="left" colspan="10">ИНВЕСТБАНК  АД</td>
+            </tr>
+            <tr header="yes">
+               <td font-size="7" bold="yes" width="15%" index="1">Име/ Наименование на лицето</td>
+               <td font-size="7" bold="yes" width="20%" index="2">Номер на сметка</td>
+               <td font-size="7" bold="yes" width="13%" index="3">Вид сметка / групова характеристика</td>
+               <td font-size="7" bold="yes" width="7%" index="4">Валута</td>
+               <td font-size="7" bold="yes" width="7%" index="5">Дата откриване</td>
+               <td font-size="7" bold="yes" width="7%" index="6">Дата закриване</td>
+               <td font-size="7" bold="yes" width="10%" index="7">Статут</td>
+               <td font-size="7" bold="yes" width="7%" index="8">Начална дата</td>
+               <td font-size="7" bold="yes" width="7%" index="9">Крайна дата</td>
+               <td font-size="7" bold="yes" width="7%" index="10">Инф. е актуална към дата</td>
+            </tr>
+            <tr header="yes" height="5">
+               <td width="15%" />
+               <td width="20%" />
+               <td width="13%" />
+               <td width="7%" />
+               <td width="7%" />
+               <td width="7%" />
+               <td width="10%" />
+               <td width="7%" />
+               <td width="7%" />
+               <td width="7%" />
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td font-size="7" align="left">РАЛИЦА МИЛАДИНОВА МИЛАДИНОВА</td>
+               <td font-size="7" align="left">123456789</td>
+               <td font-size="7" align="center">Pазплащателна, Индивидуална на физическо лице</td>
+               <td font-size="7" align="center">BGN</td>
+               <td font-size="7" align="center">01.03.2015</td>
+               <td font-size="7" align="center" />
+               <td font-size="7" align="left">Титуляр</td>
+               <td font-size="7" align="center">01.03.2015</td>
+               <td font-size="7" align="center" />
+               <td font-size="7" align="center" />
+            </tr>
+         </tbody>
+      </table>
+      <p />
+      <table width="100%">
+         <thead>
+            <tr header="yes">
+               <td font-size="7" bold="yes" align="left" colspan="10">ОБЩИНСКА БАНКА</td>
+            </tr>
+            <tr header="yes">
+               <td font-size="7" bold="yes" width="15%" index="1">Име/ Наименование на лицето</td>
+               <td font-size="7" bold="yes" width="20%" index="2">Номер на сметка</td>
+               <td font-size="7" bold="yes" width="13%" index="3">Вид сметка / групова характеристика</td>
+               <td font-size="7" bold="yes" width="7%" index="4">Валута</td>
+               <td font-size="7" bold="yes" width="7%" index="5">Дата откриване</td>
+               <td font-size="7" bold="yes" width="7%" index="6">Дата закриване</td>
+               <td font-size="7" bold="yes" width="10%" index="7">Статут</td>
+               <td font-size="7" bold="yes" width="7%" index="8">Начална дата</td>
+               <td font-size="7" bold="yes" width="7%" index="9">Крайна дата</td>
+               <td font-size="7" bold="yes" width="7%" index="10">Инф. е актуална към дата</td>
+            </tr>
+            <tr header="yes" height="5">
+               <td width="15%" />
+               <td width="20%" />
+               <td width="13%" />
+               <td width="7%" />
+               <td width="7%" />
+               <td width="7%" />
+               <td width="10%" />
+               <td width="7%" />
+               <td width="7%" />
+               <td width="7%" />
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td font-size="7" align="left">РАЛИЦА МИЛАДИНОВА МИЛАДИНОВА</td>
+               <td font-size="7" align="left">1000020000</td>
+               <td font-size="7" align="center">Спестовна, Индивидуална на физическо лице</td>
+               <td font-size="7" align="center">EUR</td>
+               <td font-size="7" align="center">03.01.2014</td>
+               <td font-size="7" align="center" />
+               <td font-size="7" align="left">Упълномощено лице</td>
+               <td font-size="7" align="center">03.01.2014</td>
+               <td font-size="7" align="center" />
+               <td font-size="7" align="center" />
+            </tr>
+         </tbody>
+      </table>
+      <p />
+      <p wrap="no" font-size="7" bold="yes">Съгласно чл. 8 от Наредба № 12 за Регистъра на банковите сметки и сейфове,  банките носят отговорност за верността, пълнотата и своевременното подаване на информацията. Българската народна банка не извършва корекции в регистъра, освен за подаваната от нея информация.</p>
+      <p />
+      <p />
+      <table width="100%" border="0">
+         <thead />
+         <tbody>
+            <tr>
+               <td width="70%" wrap="no" align="left" font-size="7">Изготвил</td>
+               <td width="30%" wrap="no" align="left" font-size="7">Проверил</td>
+            </tr>
+         </tbody>
+      </table>
+      <p />
+      <p />
+      <p wrap="no" font-size="7">Дата: 30.10.2017 г.,10:05 ч.</p>
+   </worksheet>
+</artifact>
